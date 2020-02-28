@@ -11,39 +11,39 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
+  public title = "Wis Dev";
+  public location = "Buenos Aires, Argentina";
+  public item = "../assets/icon/favicon.png";
+  public avatar: any = {
+    image: "../assets/icon/wis.png",
+    description: "",
+  };
+
+
   public appPages = [
     {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
-    },
+      title: 'STICKERS',
+      url: '/folder/Stickers',
+      icon: 'logo-whatsapp'
+    },   
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
-    },
-    {
-      title: 'Favorites',
-      url: '/folder/Favorites',
+      title: 'Favoritos',
+      url: '/folder/Favoritos',
       icon: 'heart'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
+      title: 'Explorar',
+      url: '/folder/Explorar',
+      icon: 'walk-outline'
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
+      title: 'Papelera',
+      url: '/folder/Papelera',
       icon: 'trash'
     },
-    {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
-    }
+    
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  public labels = ['Simpsons', 'Macri Gato', 'Cats', 'Wis'];
 
   constructor(
     private platform: Platform,
