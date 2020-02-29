@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+/* ======== Angular material custom themes ======== */
+
+$stickerTheme: ( 50: #eef5e8, 100: #d5e7c6, 200: #b9d7a1, 300: #9dc67b, 400: #88ba5e, 500: #73ae42, 600: #6ba73c, 700: #609d33, 800: #56942b, 900: #43841d, A100: #d5ffbf, A200: #b3ff8c, A400: #91ff59, A700: #80ff40, contrast: ( 50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #000000, 500: #000000, 600: #000000, 700: #ffffff, 800: #ffffff, 900: #ffffff, A100: #000000, A200: #000000, A400: #000000, A700: #000000, ));
+$primary: mat-palette($stickerTheme);
+$accent: mat-palette($stickerTheme, 400);
+$genit-theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($genit-theme);

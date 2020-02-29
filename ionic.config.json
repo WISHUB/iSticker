@@ -1,0 +1,7 @@
+{
+  "name": "sticker-book",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <ion-card>
+
+            <ion-card-header>
+                <ion-card-subtitle class="m-0">Inicio de sesión</ion-card-subtitle>
+                <ion-card-title class="subtitle mb-0">Bienvenido/a StickerBook</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+                    <ion-input type="email" formControlName="email" aria-describedby="email" placeholder="Usuario" required></ion-input>
+                    <ion-input [type]="hidePassword ? 'password' : 'text'" formControlName="password" aria-describedby="password" placeholder="Contraseña" autocomplete="off" required></ion-input>
+                    <div class="col-12 p-0 text-right">
+                        <a href="javascript:void(0)" rel="noopener noreferrer">¿Olvidó su contraseña?</a>
+                    </div>
+                    <div class="my-4">
+                        <div class="button-container w-100">
+                            <div class="spinner-container" *ngIf="isSending">
+                                <ion-spinner></ion-spinner>
+                            </div>
+                            <ion-button color="primary" class="w-100 submit-button" type="submit" [disabled]="isSending || loginForm.invalid">{{ isSending ? '' : 'Acceder' }}</ion-button>
+                        </div>
+                    </div>
+                </form>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</div>

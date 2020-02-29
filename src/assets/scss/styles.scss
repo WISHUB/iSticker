@@ -1,0 +1,54 @@
+$primary-text-color: #212121;
+$primary-background-color: #ffffff;
+$disabled-text-color: #9b9b9b;
+$divider-color: #dbdbdb;
+$error-color: #f44336;
+$primary-color: #7636be;
+$secondary-color: #edf1f7;
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0!important;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 4px;
+    height: 8px;
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #cacaca;
+    border-radius: 50px;
+}
+
+body {
+    background-color: $secondary-color!important;
+}
+
+table {
+    width: 100%;
+}
+
+hr {
+    border-top: 1px solid #e8eaed;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px white inset !important;
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+pre[class*="language-"]>code {
+    border-left: 10px solid $primary-color!important;
+    box-shadow: -1px 0px 0px 0px $primary-color, 0px 0px 0px 1px #dfdfdf!important;
+}
