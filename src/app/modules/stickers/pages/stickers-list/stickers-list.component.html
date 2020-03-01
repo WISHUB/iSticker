@@ -1,0 +1,17 @@
+<ion-content>
+    <ion-grid class="container my-5">
+        <ion-row>
+            <ion-text color="primary">
+                <h2>Stickers</h2>
+            </ion-text>
+            <ion-col>
+                <ion-searchbar animated placeholder="Search" debounce="500" showCancelButton="focus" cancelButtonText="Clear"></ion-searchbar>
+            </ion-col>
+            <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+                <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+                    <app-sticker-item *ngFor="let sticker of stickers" [sticker]="sticker"></app-sticker-item>
+                </ion-infinite-scroll-content>
+            </ion-infinite-scroll>
+        </ion-row>
+    </ion-grid>
+</ion-content>

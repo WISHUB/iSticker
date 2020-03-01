@@ -30,7 +30,6 @@ import { defineCustomElements } from '@ionic/pwa-elements/loader';
 // Components
 import { AppComponent } from './app.component';
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
-import { HomeComponent } from './layout/home/home.component';
 
 export function jwtTokenGetter() {
   const auth = JSON.parse(sessionStorage.getItem('auth'));
@@ -72,8 +71,7 @@ const storeDevtoolsModule = StoreDevtoolsModule.instrument({
   declarations: [
     AppComponent,
     AuthLayoutComponent,
-    ContentLayoutComponent,
-    HomeComponent
+    ContentLayoutComponent
   ],
   imports: [
     BrowserModule,

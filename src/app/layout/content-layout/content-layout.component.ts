@@ -20,11 +20,9 @@ export class ContentLayoutComponent implements OnInit, OnDestroy {
 
   public selectedIndex = 0;
   public title = 'Wis Dev';
-  public location = 'Buenos Aires, Argentina';
   public item = 'assets/icons/favicon.png';
   public avatar: any = {
-    image: 'assets/images/wis.png',
-    description: '',
+    image: 'assets/images/wis.png'
   };
 
   public appPages = [
@@ -32,19 +30,8 @@ export class ContentLayoutComponent implements OnInit, OnDestroy {
       title: 'Stickers',
       url: '/stickers',
       icon: 'logo-whatsapp'
-    },
-    {
-      title: 'Favoritos',
-      url: '/favorites',
-      icon: 'heart'
-    },
-    {
-      title: 'Explorar',
-      url: '/explore',
-      icon: 'walk-outline'
     }
   ];
-  public labels = ['Simpsons', 'Macri Gato', 'Cats', 'Wis'];
 
   constructor(
     private router: Router,
