@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll } from '@ionic/angular';
+import { ApiService } from '@services';
+import { Sticker } from '@interfaces';
 
 @Component({
   selector: 'app-stickers-list',
@@ -8,25 +10,22 @@ import { IonInfiniteScroll } from '@ionic/angular';
 })
 export class StickersListComponent implements OnInit {
 
-  stickers: any[];
+  stickers: Sticker[];
 
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
-  constructor() {
-    this.stickers = [
-      {
-        name: 'test'
-      },
-      {
-        name: 'test 2'
-      },
-      {
-        name: 'test 3'
-      }
-    ];
+  constructor(private apiService: ApiService) {
+    this.stickers = [];
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getStickers();
+  }
+
+  getStickers(): void {
+    this.apiService.get('stickers')
+      .subscribe((response: Sticker[]) => this.stickers = response);
+  }
 
   loadData(event) {
     setTimeout(() => {

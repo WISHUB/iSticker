@@ -13,8 +13,8 @@ const routes: Routes = [
   {
     path: '',
     component: ContentLayoutComponent,
-    // canActivate: [AuthGuard],
-    // canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     children: [
       {
         path: 'stickers',

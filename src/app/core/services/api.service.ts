@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '@env';
 import { IRequestOptions } from '@interfaces';
 import Swal from 'sweetalert2';
+import { map } from 'rxjs/internal/operators/map';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,8 @@ export class ApiService {
    * @param options options of the request like headers, body, etc.
    */
   public get < T >(endPoint: string, options ?: IRequestOptions): Observable < T > {
-    return this.http.get < T > (this.api + endPoint, options);
+    return this.http.get < any > (this.api + endPoint, options)
+      .pipe(map(response => response?.data));
   }
 
   /**

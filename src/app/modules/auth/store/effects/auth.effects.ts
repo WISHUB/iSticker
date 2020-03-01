@@ -23,12 +23,12 @@ export class AuthEffects {
       return this.authService.logIn(payload).pipe(
         map((response: any) => {
           return new LogInSuccess({
-            id: response.data.user.id,
-            username: response.data.user.username,
-            first_name: response.data.user.first_name,
-            last_name: response.data.user.last_name,
-            email: response.data.user.email,
-            token: this.firstUpper(response.data.token_type) + ' ' + response.data.access_token
+            id: response.user.id,
+            username: response.user.username,
+            first_name: response.user.first_name,
+            last_name: response.user.last_name,
+            email: response.user.email,
+            token: this.firstUpper(response.token_type) + ' ' + response.access_token
           });
         }),
         catchError((error: any) => {
@@ -40,7 +40,7 @@ export class AuthEffects {
   @Effect({ dispatch: false })
   LogInSuccess$: Observable < any > = this.actions$.pipe(
     ofType(AuthActionTypes.LOGIN_SUCCESS),
-    tap(() => this.router.navigateByUrl('/home'))
+    tap(() => this.router.navigateByUrl('/stickers'))
   );
 
   @Effect({ dispatch: false })
@@ -56,12 +56,12 @@ export class AuthEffects {
       return this.authService.signUp(payload).pipe(
         map((response: any) => {
           return new SignUpSuccess({
-            id: response.data.user.id,
-            username: response.data.user.username,
-            first_name: response.data.user.first_name,
-            last_name: response.data.user.last_name,
-            email: response.data.user.email,
-            token: this.firstUpper(response.data.token_type) + ' ' + response.data.access_token
+            id: response.user.id,
+            username: response.user.username,
+            first_name: response.user.first_name,
+            last_name: response.user.last_name,
+            email: response.user.email,
+            token: this.firstUpper(response.token_type) + ' ' + response.access_token
           });
         }),
         catchError((error: any) => {
